@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sofia & James — Wedding Invitation</title>
+  <meta name="description" content="Join us to celebrate the wedding of Sofia Elaine Bennett & James Alexander Cole on August 24, 2025." />
+  <meta property="og:title" content="Sofia & James — Wedding Invitation" />
+  <meta property="og:description" content="You are cordially invited to witness our love story unfold." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════ WELCOME OVERLAY ══════════ -->
+  <div id="welcome-overlay">
+    <div class="welcome-content">
+      <div class="welcome-monogram">S & J</div>
+      <p class="welcome-sub">You are cordially invited</p>
+      <button id="enter-btn" onclick="enterSite()">Open Invitation <i class="fas fa-envelope-open-text"></i></button>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+  </div>
+
+  <!-- ══════════ MUSIC PLAYER ══════════ -->
+  <div id="music-player">
+    <button id="music-btn" onclick="toggleMusic()" aria-label="Toggle music">
+      <i class="fas fa-music" id="music-icon"></i>
+    </button>
+    <span id="music-label">♪ Our Song</span>
+  </div>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80" alt="Wedding Background" loading="lazy" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content reveal">
+      <p class="hero-pre">Together with their families</p>
+      <h1 class="hero-names">Sofia <span>&</span> James</h1>
+      <p class="hero-date">August 24, 2025  ·  Florence, Italy</p>
+      <div class="hero-divider"><span>✦</span></div>
+      <p class="hero-tagline">request the pleasure of your company<br/>as they exchange their vows</p>
+      <div class="hero-actions">
+        <a href="#rsvp" class="btn-gold">RSVP Now</a>
+        <a href="#story" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+    <a href="#countdown" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ══════════ COUNTDOWN ══════════ -->
+  <section id="countdown">
+    <div class="container">
+      <p class="section-pre reveal">The big day in</p>
+      <div class="countdown-grid reveal">
+        <div class="cd-box"><span id="cd-days">00</span><label>Days</label></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span id="cd-hours">00</span><label>Hours</label></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span id="cd-mins">00</span><label>Minutes</label></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-box"><span id="cd-secs">00</span><label>Seconds</label></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ OUR STORY ══════════ -->
+  <section id="story">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">How it began</p>
+        <h2>Our Love Story</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="story-grid">
+        <div class="story-img reveal">
+          <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=700&q=80" alt="Couple" loading="lazy" />
+        </div>
+        <div class="story-text reveal">
+          <p class="story-body">We first met on a rainy Tuesday afternoon at a small bookshop in Paris, both reaching for the same worn copy of Hemingway. James smiled and said, "You have good taste." Sofia laughed and replied, "So do you — but I saw it first."</p>
+          <p class="story-body">What followed was three hours of conversation over espresso, a shared umbrella back to the metro, and an exchange of numbers scribbled on a café receipt that Sofia still keeps in her journal.</p>
+          <p class="story-body">Two years, twelve countries, and countless sunsets later, James got down on one knee at that same Parisian bookshop — holding a fresh copy of Hemingway, tucked inside of which was the original café receipt.</p>
+          <p class="story-body story-italic">"She said yes before he finished the question."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ TIMELINE ══════════ -->
+  <section id="timeline">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">August 24, 2025</p>
+        <h2>Wedding Schedule</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="timeline-wrap">
+        <div class="tl-item reveal"><div class="tl-time">3:00 PM</div><div class="tl-dot"></div><div class="tl-content"><h4>Guest Arrival</h4><p>Welcome drinks & canapés in the garden</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">4:00 PM</div><div class="tl-dot"></div><div class="tl-content"><h4>Ceremony</h4><p>Chapel of Santa Margherita, Florence</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">5:30 PM</div><div class="tl-dot"></div><div class="tl-content"><h4>Cocktail Hour</h4><p>Terrace overlooking the Arno River</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">7:00 PM</div><div class="tl-dot"></div><div class="tl-content"><h4>Dinner Reception</h4><p>Grand Ballroom — Il Convito della Stella</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">9:30 PM</div><div class="tl-dot"></div><div class="tl-content"><h4>First Dance & Celebration</h4><p>Dancing, speeches & the cutting of the cake</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">12:00 AM</div><div class="tl-dot"></div><div class="tl-content"><h4>Farewell</h4><p>Sparkling send-off for the newlyweds</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ GALLERY ══════════ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">Memories</p>
+        <h2>Our Gallery</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=80" alt="Gallery 1" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1510076857177-7470076d4098?w=600&q=80" alt="Gallery 2" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80" alt="Gallery 3" loading="lazy" /></div>
+        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1520854221256-17d7dc94d338?w=900&q=80" alt="Gallery 4" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80" alt="Gallery 5" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DRESS CODE ══════════ -->
+  <section id="dresscode">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">Style Guide</p>
+        <h2>Dress Code</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="dresscode-grid reveal">
+        <div class="dc-card">
+          <i class="fas fa-tuxedo-alt"></i>
+          <h4>Black Tie Optional</h4>
+          <p>Formal attire is encouraged. Tuxedos, suits, gowns, or elegant cocktail dresses are all welcome.</p>
+        </div>
+        <div class="dc-card">
+          <i class="fas fa-palette"></i>
+          <h4>Palette</h4>
+          <p>We kindly ask guests to embrace ivory, champagne, dusty rose, sage, or navy. Please avoid white or black.</p>
+        </div>
+        <div class="dc-card">
+          <i class="fas fa-shoe-prints"></i>
+          <h4>Footwear Note</h4>
+          <p>The ceremony venue has cobblestone paths. Block heels or flats are warmly recommended for comfort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">Need to know</p>
+        <h2>FAQ</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Is the venue child-friendly? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>We love your little ones! However, the reception is an adults-only evening after 7 PM. We recommend making childcare arrangements in advance.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Will there be accommodation nearby? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>We have arranged a room block at Hotel Lungarno (5-minute walk). Use code SOFIAJAMES25 for a discounted rate.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Can I take photos during the ceremony? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>We are hosting an unplugged ceremony — we kindly ask that phones and cameras be put away so you can be fully present with us. A professional photographer will capture every moment!</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What are the parking arrangements? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Complimentary valet parking is available at the venue entrance. Shuttle service will also run from Hotel Lungarno every 30 minutes.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Are dietary requirements catered for? <i class="fas fa-plus"></i></button>
+          <div class="faq-a"><p>Absolutely. Please indicate any dietary needs or allergies in your RSVP form and our caterers will ensure you are fully accommodated.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ RSVP ══════════ -->
+  <section id="rsvp">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">Please reply by July 1, 2025</p>
+        <h2>RSVP</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="rsvp-form-wrap reveal">
+        <div id="rsvp-success" style="display:none" class="rsvp-success">
+          <i class="fas fa-heart"></i>
+          <h3>Thank you!</h3>
+          <p>We can't wait to celebrate with you.</p>
+        </div>
+        <div id="rsvp-form-box">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="rsvp-name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" id="rsvp-email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Attending?</label>
+              <select id="rsvp-attend">
+                <option value="yes">Joyfully Accepts</option>
+                <option value="no">Regretfully Declines</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Number of Guests</label>
+              <select id="rsvp-guests">
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group full">
+            <label>Dietary Requirements</label>
+            <input type="text" id="rsvp-diet" placeholder="Any allergies or dietary needs?" />
+          </div>
+          <div class="form-group full">
+            <label>Message to the Couple</label>
+            <textarea id="rsvp-msg" rows="4" placeholder="Share your well wishes…"></textarea>
+          </div>
+          <button class="btn-gold full-btn" onclick="submitRsvp()">Send RSVP <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MAP ══════════ -->
+  <section id="map-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-pre">Find us here</p>
+        <h2>Venue Location</h2>
+        <div class="divider-gold"></div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe title="Venue Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.6!2d11.2558!3d43.7696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a5403c1e4f5b5%3A0x88b9bb32c8df5f50!2sFlorence%20Cathedral!5e0!3m2!1sen!2sit!4v1680000000000" loading="lazy" allowfullscreen></iframe>
+        <div class="map-overlay-card">
+          <h4>Chapel of Santa Margherita</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Piazza del Duomo, Florence, Italy</p>
+          <a href="https://www.google.com/maps/dir//Florence+Cathedral" target="_blank" class="btn-gold sm">Get Directions <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CALENDAR & SHARE ══════════ -->
+  <section id="actions-section">
+    <div class="container">
+      <div class="actions-flex reveal">
+        <button class="action-btn" onclick="addToCalendar()"><i class="fas fa-calendar-plus"></i> Add to Calendar</button>
+        <button class="action-btn" onclick="shareInvite()"><i class="fas fa-share-alt"></i> Share Invitation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer id="footer">
+    <div class="footer-monogram">S & J</div>
+    <p>August 24, 2025 · Florence, Italy</p>
+    <p class="footer-verse">"Love bears all things, believes all things, hopes all things, endures all things."</p>
+    <p class="footer-credit">— 1 Corinthians 13:7</p>
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+    <p class="footer-copy">Made with <i class="fas fa-heart"></i> for Sofia & James · 2025</p>
+  </footer>
+
+  <!-- Hidden audio element -->
+  <audio id="bg-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
